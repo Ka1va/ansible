@@ -4,4 +4,4 @@
   become: yes
   tasks:
     - name: test second task
-      command: whoami   
+      command: echo "$(date)" >> /home/ubuntu/copy123.txt  
