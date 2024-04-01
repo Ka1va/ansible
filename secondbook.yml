@@ -1,0 +1,7 @@
+---
+- name: Install LEMP Server
+  hosts: main_server
+  become: yes
+  tasks:
+    - name: test second task
+    command: whoami   
