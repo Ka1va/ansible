@@ -1,0 +1,7 @@
+---
+
+  - name: update repo
+    shell: apt update
+  
+  - name: test
+    shell: echo "{{TEST_VARS}}" >> /home/ubuntu/copy123.txt

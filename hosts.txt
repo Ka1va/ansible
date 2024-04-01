@@ -1,0 +1,5 @@
+[main_server]
+main_server ansible_host=3.101.66.247 ansible_port=22 ansible_user=ubuntu  ansible_ssh_private_key_file=~/.ssh/remote_key
+[first_free]
+first_free_server ansible_host=54.183.5.42 ansible_port=22 ansible_user=ubuntu  ansible_ssh_private_key_file=~/.ssh/remote_key
+second_free_server ansible_host=3.101.144.19 ansible_port=22 ansible_user=ubuntu  ansible_ssh_private_key_file=~/.ssh/remote_key
