@@ -5,3 +5,6 @@
   
   - name: test
     shell: echo "{{TEST_VARS}}" >> /home/ubuntu/copy123.txt
+  - name: test2
+    shell: echo "proverka semaphore" >> /home/ubuntu/copy123.txt
+
