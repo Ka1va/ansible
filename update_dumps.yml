@@ -1,0 +1,9 @@
+---
+- name: save dumps
+  hosts: main_server 
+  become: yes
+  tasks:
+    - name: create new dump
+      shell: docker compose exec -it pg_dump -U test -d testdb > /home/dump$(date '+%F|%H:%M:%S')
+    - name: cp dump from container to host
+      shell: docker compose cp db:/home/* ./dumps
