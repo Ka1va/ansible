@@ -3,6 +3,8 @@
   hosts: main_server 
   become: yes
   tasks:
+    - name: cd to compose path
+      shell:cd /home/ubuntu/workspace
     - name: create new dump
       shell: docker compose exec -it pg_dump -U test -d testdb > /home/dump$(date '+%F|%H:%M:%S')
     - name: cp dump from container to host
