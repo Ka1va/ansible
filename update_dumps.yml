@@ -6,6 +6,8 @@
     - name: cd to compose file path
       shell: cd /home/ubuntu/workspace
     - name: create new dump
-      shell: docker compose exec -it db pg_dump -U test -d testdb > /home/dump$(date '+%F|%H:%M:%S')
+      shell: docker compose exec -it db sh
+      shell: pg_dump -U test -d testdb > /dumps/dump-$(date '+%F|%H:%M:%S').dump
+      shell: \exit
     - name: cp dump from container to host
-      shell: docker compose cp db:/home/* ./dumps
+      shell: docker compose cp db:/dumps/* ./dumps
