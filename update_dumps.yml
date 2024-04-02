@@ -6,8 +6,6 @@
     - name: cd to compose file path
       shell: cd /home/ubuntu/workspace
     - name: create new dump
-      shell: docker compose exec -it db sh
-      shell: pg_dump -U test -d testdb > /dumps/dump-$(date '+%F|%H:%M:%S').dump
-      shell: \exit
-    - name: cp dump from container to host
-      shell: docker compose cp db:/dumps/* ./dumps
+      shell: docker compose exec -it db pg_dump -U test -d testdb > /home/ubuntu/workspace/dumps/dump-$(date '+%F|%H:%M:%S').dump
+    - name: message on mail
+      shell: echo "Dump обновился" | ssmtp -C/etc/ssmtp/ssmtp.conf god.winer@yandex.ru
