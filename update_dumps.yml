@@ -5,9 +5,9 @@
   tasks:
     - name: cd to compose file path
       shell: cd /home/ubuntu/workspace
-    - name: create new dump
-      shell: cd /home/ubuntu/workspace
+    - name: check
       shell: pwd
+    - name: create new dump
       shell: docker compose exec -it db pg_dump -U test -d testdb > /home/ubuntu/workspace/dumps/dump-$(date '+%F|%H:%M:%S').dump
     - name: message on mail
       shell: echo "Dump обновился" | ssmtp -C/etc/ssmtp/ssmtp.conf god.winer@yandex.ru
